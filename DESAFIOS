@@ -1,0 +1,34 @@
+1 -  PEÇA AO USUÁRIO  A VELOCIDADE DO CARRO E DIGA QUE SE ESTIVER ACIMA DE 80 KM DIGA QUE ELE FOI MULTADO E CALCULE O VALOR DA MULTA . O VALOR DA MULTA É R$ 7,00 A  CADA KM ACIMA DE 80.
+
+velocidade = float(input('Qual a velocidade do carro? '))
+multa = (velocidade-80)*7
+if velocidade >80:
+    print(f'Você foi multado! O valor da multa vai ser R$ {multa:.2f} ')
+else:
+    print('Você não foi multado')
+    
+ 2 - PEÇA AO USUÁRIO QUE DIGITE UM NUMERO E DIGA SE ESSE NUMERO É IMPAR OU PAR.
+ 
+ usuario = int(input('Digite um numero: '))
+if (usuario % 2) ==0:
+    print('Esse numero é PAR!')
+else:
+    print('Esse numero é IMPAR!')
+    
+ 3 - PEÇA A DISTANCIA DE UMA VIAGEM EM KM E CALCULE O VALOR DA PASSAGEM. CONSIDERE  O VALOR DA PASSAGEM POR KM  R$0,50  PARA UMA VIAGEM DE ATE 200KM, E  R$0,45 PARA VIAGENS  COM DISTANCIA MAIOR DE 200KM.
+ 
+ distancia = float(input('Qual a distancia da viagem em km? '))
+passagem1 = 0.50
+passagem2 = 0.45
+if distancia<=200:
+    print(f'O valor da passagem é R$ {distancia*passagem1:.2f}')
+else:
+    print(f'O valor da passagem é R$ {distancia*passagem2:.2f}')
+    
+ 4 - PEÇA QUAL O SALÁRIO DO FUNCIONÁRIO E SE FOR MAIOR QUE R$1250,00  TERÁ UM AUMENTO DE 10% EM CIMA DO SALÁRIO, SE GANHAR MENOS TERÁ UM AUMENTO DE 15%.
+ 
+ salario = float(input('Qual o salario do funcionário? '))
+if salario >1250:
+    print(f'O funcionario terá um aumento de R$ {(salario*1.10)-salario:.2f}')
+else:
+    print(f'O funcionario terá um aumento de R$ {(salario*1.15)-salario:.2f}')
