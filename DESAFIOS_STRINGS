@@ -1,0 +1,70 @@
+22 – Crie um programa que leia o nome completo de uma pessoa e mostre:
+a)	O nome com todas as letras maiúsculas
+b)	O nome com todas as letras minúsculas
+c)	Quantas letras ao todo (sem considerar espaços)
+d)	Quantas letras tem o primeiro nome
+
+nome = input('Digite seu nome completo: ')
+print('Analisando seu nome...')
+print(f'Seu nome em maiúsculo é {nome.upper()}')
+print(f'Seu nome em minúsculo é {nome.lower()}')
+print(f'Seu nome ao todo tem {len(nome.replace(" ",""))} letras')
+#print(f'Seu primeiro nome tem {nome.find(" ")} letras')
+separa = nome.split()
+print(f'Seu primeiro nome tem {len(separa[0])} letras')
+
+
+23 – Faça um programa que leia um número de 0 a 9999 e mostre na tela cada um dos dígitos separados. 
+Ex.: digite um número: 1834
+Unidade: 4
+Dezena: 3
+Centena: 8
+Milhar: 1
+
+
+num = int(input('Informe um numero: '))
+u = num // 1 % 10
+d = num // 10 % 10
+c = num // 100 % 10
+m = num // 1000 % 10
+print(f'Analisando o número {num}')
+print(f'Unidade: {u}')
+print(f'Dezena: {d}')
+print(f'Centena: {c}')
+print(f'Milhar: {m}')
+
+
+24 – Crie um programa que leia o nome de uma cidade e diga se ela começa ou não com o nome “Santo”.
+
+cidade = input('Informe o nome de uma cidade: ').upper().strip()
+separa = cidade.split()
+print('SANTO' in separa[0])
+
+
+25 – Crie um programa que leia o nome de uma pessoa e diga se ela tem “Silva” no nome.
+
+nome = input('Digite seu nome: ').strip()
+print('SILVA' in nome.upper())
+
+
+26 – Faça um programa que leia uma frase pelo teclado e mostre:
+a)	Quantas vezes aparece a letra “A”
+b)	Em que posição ela aparece a primeira vez
+c)	Em que posição ela aparece a última vez
+
+
+frase = input('Digite uma Frase: ').strip().upper()
+print(f'Na frase letra A aparece {frase.count("A")} vezes ')
+print(f'A letra A aparece a primeira vez na posição {frase.find("A")+1}')
+print(f'A ultima letra A aparece na posição {frase.rfind("A")+1}')
+
+
+27 – Faça um programa que leia o nome completo de uma pessoa, mostrando em seguida o primeiro e o último nome separadamente
+
+nome = input('Qual o seu nome completo? ').strip().upper()
+separa = nome.split()
+print('Muito prazer em te conhecer')
+print(f'Seu primeiro nome é {separa[0]}')
+print(f'Seu ultimo nome é {separa[len(separa)-1]}')
+
+
