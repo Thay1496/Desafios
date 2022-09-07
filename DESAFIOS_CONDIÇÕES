@@ -1,0 +1,105 @@
+28 – Escreva um programa que faça o computador “pensar” em um número inteiro entre 0 e 5 e peça para o usuário tentar descobrir qual foi o número escolhido pelo computador. 
+O programa deverá escrever na tela se o usuário venceu ou perdeu.from random import randint
+
+
+from random import randint
+comp = randint(0,5)
+print('-' * 60)
+print('Tente descobrir o número escolhido pelo computador!')
+print('-' * 60)
+num = int(input('Digite um número: '))
+if num == comp:
+    print('Você VENCEU!!')
+else:
+    print('Você PERDEU! Tente outra vez!')
+print('--FIM--')
+
+
+29 – Escreva um programa que leia a velocidade de um carro. Se ele ultrapassar 80km/h mostre uma mensagem dizendo que ele foi multado.
+A multa vai custar R$7.00 por cada km acima do limite.
+
+
+km = float(input('Informe a velocidade do carro em km: '))
+if km > 80:
+    print(f'Você foi MULTADO! Sua multa será de R$ {(km-80)*7:.2f}')
+print('Tenha um bom dia! Dirija com segurança.')
+
+
+30 – Crie um programa que leia um número inteiro e mostre na tela se ele é PAR ou ÍMPAR.
+
+n = int(input('Digite um número: '))
+if n % 2 == 0:
+    print(f'O número {n} é PAR')
+else:
+    print(f'O numero {n} é IMPAR')
+
+
+31 – Desenvolva um programa que pergunte a distância de uma viagem em km. 
+Calcule o preço da passagem, cobrando R$0.50 por km para viagens de até 200 km e R$0.45 para viagens mais longas.
+
+
+dist = float(input('Informe a distância da viagem: '))
+if dist <= 200:
+    print(f'O valor da passagem custará R$ {dist * 0.50:.2f}')
+else:
+    print(f'O valor da passagem custará R$ {dist * 0.45:.2f}')
+
+
+32 – Faça um programa que leia um ano qualquer e mostre se ele é BISSEXTO.
+
+
+from datetime import date
+ano = int(input('Que ano quer analisar? Coloque 0 para analisar o ano atual: '))
+if ano == 0:
+    ano = date.today().year
+if ano % 4 == 0 and ano % 100 != 0 or ano % 400 == 0:
+    print(f'O ano {ano} é BISSEXTO!')
+else:
+    print(f'O ano {ano} NÃO É BISSEXTO')
+
+
+33 – Faça um programa que leia 3 números e mostre qual é o maior e qual é o menor.
+
+n1 = int(input('Primeito numero: '))
+n2: int = int(input('Segundo numero: '))
+n3 = int(input('Terceiro numero: '))
+menor = n1
+if n2 < n1 and n2 < n3:
+    menor = n2
+if n3 < n1 and n3 < n2:
+    menor = n3
+maior = n1
+if n2 > n1 and n2 > n3:
+    maior = n2
+if n3 > n1 and n3 > n2:
+    maior = n3
+
+print(f'O menor valor digitado foi {menor}')
+print(f'O maior valor digitado foi {maior}')
+
+
+34 – Escreva um programa que pergunte o salário de um funcionário e calcule o valor do seu aumento. Para salários superiores a R$1250, calcule um aumento de 10%. 
+Para os inferiores ou iguais, o aumento é de 15%.
+
+sal = float(input('Informe o salário do funcionário R$ '))
+if sal > 1250:
+    print(f'O novo salário do funcianário com o aumento será de R$ {sal + (sal*0.1):.2f}')
+else:
+    print(f'O novo salário do funcionário com o aumento será de R$ {sal + (sal*0.15):.2f}')
+
+
+35 – Desenvolva um programa que leia o comprimento de 3 retas e diga ao usuário se elas podem ou não formar um triângulo.
+
+
+print('-=' * 20)
+print('Analisador de Triângulos')
+print('-=' * 20)
+r1 = float(input('Primeiro segmento: '))
+r2 = float(input('Segundo segmento: '))
+r3 = float(input('Terceiro segmento: '))
+if r1 < r2 + r3 and r2 < r1 + r3 and r3 < r1 + r2:
+    print('Os segmentos acima PODEM FORMAR UM TRIÂNGULO')
+else:
+    print('Os segmentos acima NÃO PODEM FORMAR UM TRIÂNGULO')
+
+
