@@ -1,0 +1,242 @@
+36 – Escreva um programa para aprovar o empréstimo bancário para compra de uma casa. 
+O programa vai perguntar o valor da casa, o salário do comprador e em quantos anos ele vai pagar. 
+Calcule o valor da prestação mensal, sabendo que ela não pode exceder 30% do salário ou então o empréstimo será negado.
+
+print('FINANCIAMENTO DA CASA PRÓPRIA')
+valorCasa = float(input('Informe o valor da casa a ser financiada:R$ '))
+salario = float(input('Informe o salário do comprador: '))
+anos = int(input('Informe em quantos anos será o pagamento: '))
+totalAnos = anos * 12
+parcela = valorCasa/totalAnos
+print(f'Para pagar uma casa de R${valorCasa:.2f} em {anos} anos, a prestação será de R${parcela:.2f}')
+if parcela <= (salario * 0.3):
+    print('Financiamente Aprovado!')
+else:
+    print('Desculpa! Financiamento negado!')
+    
+    
+37 – Escreva um programa que leia um número inteiro qualquer e peça para o usuário escolher qual será a base de conversão:
+a)	Para BINÁRIO;
+b)	Para OCTAL;
+c)	Para HEXADECIMAL
+
+
+num = int(input('Digite um número inteiro: '))
+opcao = int(input('Escolha uma opção: \n[1] para BINÁRIO'
+                  '\n[2] para OCTAL'
+                  '\n[3] para HEXADECIMAL'))
+escolha = print(f'Sua opção é {opcao}')
+if opcao == 1:
+    print(f'O número {num} convertido para BINÁRIO é {bin(num)[2:]}')
+elif opcao == 2:
+    print(f'O numéro {num} convertido para OCTAL é {oct(num)[2:]}')
+elif opcao == 3:
+    print(f'O número {num} convertido para HEXADECIMAL é {hex(num)[2:]}')
+else:
+    print('Opção inválida!')
+
+
+38 – Escreva um programa que leia 2 números inteiros e compare-os, mostrando na tela uma mensagem:
+1.	O primeiro valor é maior;
+2.	O segundo valor é maior;
+3.	Não existe valor maior, os dois são iguais
+
+
+num1 = int(input('Digite um número: '))
+num2 = int(input('Digite outro número: '))
+if num1 > num2:
+    print('O primeiro valor é maior!')
+elif num2 > num1:
+    print('O segundo valor é maior!')
+else:
+    print('Não existe valor maior, os dois são iguais!')
+
+
+39 – Faça um programa que leia o ano de nascimento de um jovem e informe, de acordo com sua idade: 
+a)	Se ele vai se alistar ao serviço militar;
+b)	Se é a hora de se alistar;
+c)	Se já passou do tempo de alistamento
+Seu programa também deverá mostrar o tempo que falta ou que passou do prazo.
+
+
+from datetime import date
+nasc = int(input('Informe o ano de nascimento: '))
+ano_atual = date.today().year
+idade = ano_atual - nasc
+print(f'Quem nasceu em {nasc} tem {idade} anos em {ano_atual}')
+if idade < 18:
+    print('Você ainda vai se alistar ao serviço militar')
+    print(f'Faltam {18 - idade} anos para o seu alistamento')
+elif idade == 18:
+    print('É a hora de se alistar')
+else:
+    print(f'Já passaram {idade - 18} anos do tempo de alistamento')
+
+
+40 – Crie um programa que leia duas notas de um aluno e calcule sua média, mostrando uma mensagem no final de acordo com a média atingida:
+a)	Média abaixo de 5.0: REPROVADO
+b)	Média entre 5.0 e 6.9: RECUPERAÇÃO
+c)	Média 7.0 ou superior: APROVADO
+
+
+nota1 = float(input('Informe a primeira nota: '))
+nota2 = float(input('Informe a segunda nota: '))
+media = (nota1 + nota2)/2
+print(f'Sua média foi de {media:.1f}')
+if media < 5:
+    print('Aluno foi REPROVADO!')
+elif media >= 5 and media < 6.9:
+    print('Aluno está em RECUPERAÇÃO')
+elif media >= 7:
+    print('Aluno foi APROVADO!')
+
+
+41 – A Confederação Nacional de Natação precisa de um programa que leia o ano de nascimento de um atleta e mostre sua categoria, de acordo com a idade:
+1 – Até 9 anos: MIRIM
+2 – Até 14 anos: INFANTIL
+3 – Até 19 anos: JUNIOR
+4 – Até 25 anos: SÊNIOR
+5 – Acima: MASTER
+
+
+from datetime import date
+nasc = int(input('Informe o ano de nascimento do atleta: '))
+ano_atual = date.today().year
+idade = ano_atual - nasc
+print(f'O atleta tem {idade} anos')
+if idade <= 9:
+    print('Categoria: MIRIM')
+elif idade <= 14:
+    print('Categoria: INFANTIL')
+elif idade <=19:
+    print('Categoria: JUNIOR')
+elif idade <=25:
+    print('Categoria: SÊNIOR')
+else:
+    print('Categoria: MASTER')
+
+
+42 – Refaça o desafio 35 dos triângulos, acrescentando o recurso de mostrar que tipo de triângulo será formado:
+a)	Equilátero: todos os lados iguais
+b)	Isósceles: dois lados iguais
+c)	Escaleno: todos os lados diferentes
+
+
+print('-=' * 20)
+print('Analisador de Triângulos')
+print('-=' * 20)
+r1 = float(input('Primeiro segmento: '))
+r2 = float(input('Segundo segmento: '))
+r3 = float(input('Terceiro segmento: '))
+if r1 < r2 + r3 and r2 < r1 + r3 and r3 < r1 + r2:
+    print('Os segmentos acima PODEM FORMAR UM TRIÂNGULO')
+    if r1 == r2 == r3:
+        print('Esse triângulo é do tipo Equilátero')
+    elif r1 != r2 != r3 != r1:
+        print('Esse triângulo é do tipo Escaleno')
+    else:
+        print('Esse triângulo é do tipo Isósceles')
+else:
+    print('Os segmentos acima NÃO PODEM FORMAR UM TRIÂNGULO')
+
+
+43 – Desenvolva uma lógica que leia o peso e a altura de uma pessoa, calcule seu IMC e mostre o seu status, de acordo com a tabela abaixo:
+1 – Abaixo de 18.5: ABAIXO DO PESO
+2 – Entre 18.5 e 25: PESO IDEAL
+3 – 25 até 30: SOBREPESO
+4 – 30 até 40: OBESIDADE
+5 – Acima de 40: OBESIDADE MORBIDA
+
+
+print('CALCULANDO IMC')
+peso = float(input('Informe seu peso: '))
+altura = float(input('Informe a sua altura: '))
+imc = peso / (altura ** 2)
+print(f'Seu IMC é {imc:.1f}')
+if imc < 18.5:
+    print('Abaixo do peso')
+elif 18.5 <= imc < 25:
+    print('Peso Ideal')
+elif 25 <= imc < 30:
+    print('Sobrepeso')
+elif 30 <= imc <= 40:
+    print('Obesidade')
+else:
+    print('Obesidade Morbida')
+
+
+44 – Elabore um programa que calcule o valor a ser pago por um produto, considerando o seu preço normal e condição de pagamento: 
+a)	À vista dinheiro/cheque: 10% de desconto
+b)	À vista no cartão: 5% de desconto
+c)	Em até 2x no cartão: preço normal
+d)	3x ou mais no cartão: 20% de juros
+
+
+preco = float(input('Informe o preço do produto que deseja comprar: R$ '))
+forma_pag = int(input('Qual a forma de pagamento? \n[1] A vista dinheiro/cheque'
+                      '\n[2] A vista no cartão'
+                      '\n[3] Em até 2x no cartão'
+                      '\n[4] 3x ou mais no cartão'))
+if forma_pag == 1:
+    total = preco - (preco*0.1)
+    print(f'O valor a ser pago pelo produto será de R${total:.2f}')
+elif forma_pag == 2:
+    total = preco - (preco*0.05)
+    print(f'O valor a ser pago pelo produto será de R${total:.2f}')
+elif forma_pag == 3:
+    total = preco
+    parcela = total / 2
+    print(f'O preço a ser pago pelo produto será de R${total:.2f} de 2x de {parcela:.2f}')
+elif forma_pag == 4:
+    total = preco * 1.20
+    totparcela = int(input('Quantas parcelas? '))
+    parcela = total / totparcela
+    print(f'O valor a ser pago pelo produto será de R${total:.2f} em {totparcela}x de R$ {parcela:.2f}')
+else:
+    total = preco
+    print('OPÇÃO INVALIDA! Tente novamente!')
+
+
+45 – Crie um programa que faça o computador jogar Jokenpô com você.
+
+from random import randint
+itens = ('Pedra', 'Papel', 'Tesoura')
+computador = randint(0, 2)
+print('''Suas opções:
+[0] Pedra
+[1] Papel
+[2] Tesoura''')
+jogador = int(input('Qual a sua jogada? '))
+print(f'O computador jogou {itens[computador]}')
+print(f'O jogador jogou {itens[jogador]}')
+if computador == 0: #computador jogou PEDRA
+    if jogador == 0:
+        print('EMPATOU!')
+    elif jogador == 1:
+        print('JOGADOR VENCEU')
+    elif jogador == 2:
+        print('COMPUTADOR VENCEU')
+    else:
+        print('JOGADA INVÁLIDA!')
+elif computador == 1: #computador jogou PAPEL
+    if jogador == 0:
+        print('COMPUTADOR VENCEU')
+    elif jogador == 1:
+        print('EMPATOU')
+    elif jogador == 2:
+        print('JOGADOR VENCEU')
+    else:
+        print('JOGADA INVÁLIDA')
+elif computador == 2: #computador jogou TESOURA
+    if jogador == 0:
+        print('JOGADOR VENCEU')
+    elif jogador == 1:
+        print('COMPUTADOR VENCEU')
+    elif jogador == 2:
+        print('EMPATOU')
+    else:
+        print('JOGADA INVÁLIDA"')
+
+
+
+
